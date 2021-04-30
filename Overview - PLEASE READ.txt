@@ -1,0 +1,6 @@
+In order for the app to work on a mobile device, I was unable to get MongoDB functionality to work. So the passwords are just stored locally and not persisted between sessions. I ran out of time to implement SQLite.
+
+For the Cordova Native Plugin, I tried to implement the Biometric Wrapper / Fingerprint AIO, but was unable to get the emulator to recognize the inputs without errors.
+I also tried the Shake and File plugins. Shaking the device failed to trigger the behavior, and File had errors as well.
+
+In the future, I will continue to work on the app on my own to make it useful for my day to day password storage.
