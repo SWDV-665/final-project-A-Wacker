@@ -1,0 +1,34 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>{{title}}</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <h3 text-center *ngIf="loadPasswords().length === 0">
+        No Passwords. . .
+    </h3>
+    <ion-list>
+        <ion-item-sliding *ngFor="let pass of loadPasswords(); let i = index">
+            <ion-item>
+                <h2>{{pass.site}}</h2>
+                <p>Password: {{pass.password}}</p>
+            </ion-item>
+            <ion-item-options>
+                <button (click)="editPassword(pass, i)" ion-button color="primary" icon-start>
+                    <ion-icon name="create"></ion-icon>
+                    Edit
+                </button>
+                <button (click)="removePassword(pass, i)" ion-button color="danger" icon-start>
+                    <ion-icon name="trash"></ion-icon>
+                    Delete
+                </button>
+            </ion-item-options>
+        </ion-item-sliding>
+    </ion-list>
+    <ion-fab bottom right>
+        <button (click)="addPassword()" ion-fab mini>
+      <ion-icon name="add"></ion-icon>
+    </button>
+    </ion-fab>
+</ion-content>
